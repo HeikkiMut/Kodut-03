@@ -1,0 +1,30 @@
+print("Jukebox")
+print("-"*40)
+
+#Muutujad
+palad = []
+laulu_nrd = []
+jnr = 1
+
+f_nimi = input("Palun sisestage faili nimi: ")
+print("")
+
+print("Muusikapalade valik:")
+print("-"*40)
+
+fail = open(f_nimi, encoding='UTF-8')
+
+for rida in fail:
+    rida = rida.rstrip()
+    palad.append(rida)
+    print(jnr,'. ',rida,sep='')
+    laulu_nrd.append(jnr) 
+    jnr += 1
+fail.close()
+
+print("")
+loo_nr = int(input("Palun sisestage laulu järjekorranumber: "))
+for i in range(len(laulu_nrd)):
+    if loo_nr == laulu_nrd[i]:
+        print("-"*40)
+        print("Mängitav muusikapala on *** ",palad[i]," ***")
