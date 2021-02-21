@@ -1,0 +1,16 @@
+print("Sissetulekud")
+print("-"*40)
+
+#Muutujad
+arvud = [] 
+
+#Faili sisselugemine
+fail = open('konto.txt','r')
+for rida in fail:
+    arvud.append(float(rida))
+fail.close()
+
+#Sõelub kogu listist välja positiivsed arvud
+for arv in arvud:
+    if arv > 0:
+        print(arv)
