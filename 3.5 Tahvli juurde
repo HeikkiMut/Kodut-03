@@ -1,0 +1,40 @@
+print("Tahvli juurde")
+print("-"*40)
+
+#Muutujad
+from datetime import *
+nimekiri = []
+kuu = []
+jnr = 1
+nr = datetime.now().day
+
+print("Täna on",datetime.now().day)
+print('')
+
+print("Failide nimekiri:")
+print("-"*18)
+print("nimekiri.txt")
+print("nimekiri_itt20.txt")
+print("-"*18)
+
+f_nimi = input("Palun sisestage soovitud faili nimi: ")
+print("")
+
+#Esitab valitud faili nime ja sisu, et näha, kas on õige keskkond
+fail = open(f_nimi, encoding='UTF-8')
+print("Küsitud faili nimi ja sisu: ",f_nimi)
+print("-"*40)
+
+for rida in fail:
+    rida = rida.rstrip()
+    nimekiri.append(rida)
+    print(jnr,'. ',rida,sep='')
+    kuu.append(jnr)
+    jnr += 1
+fail.close()
+
+print("-"*40)
+
+for i in range(len(kuu)):
+    if nr == kuu[i]:
+        print("Täna tuleb vastama",nimekiri[i])
